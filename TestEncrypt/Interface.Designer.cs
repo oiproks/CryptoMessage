@@ -42,11 +42,9 @@
             this.btnReloadKey = new System.Windows.Forms.Button();
             this.btnImportKey = new System.Windows.Forms.Button();
             this.btnExportKey = new System.Windows.Forms.Button();
-            this.txtKeyIV = new System.Windows.Forms.TextBox();
             this.txtKeyValue = new System.Windows.Forms.TextBox();
             this.txtKeyName = new System.Windows.Forms.TextBox();
             this.lblKey = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.btnNewKey = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -252,30 +250,17 @@
             this.btnExportKey.Click += new System.EventHandler(this.btnExportKey_Click);
             this.btnExportKey.MouseHover += new System.EventHandler(this.btn_MouseOver);
             // 
-            // txtKeyIV
-            // 
-            this.txtKeyIV.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtKeyIV.CausesValidation = false;
-            this.txtKeyIV.Enabled = false;
-            this.txtKeyIV.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKeyIV.Location = new System.Drawing.Point(232, 67);
-            this.txtKeyIV.Multiline = true;
-            this.txtKeyIV.Name = "txtKeyIV";
-            this.txtKeyIV.ReadOnly = true;
-            this.txtKeyIV.Size = new System.Drawing.Size(180, 15);
-            this.txtKeyIV.TabIndex = 21;
-            // 
             // txtKeyValue
             // 
-            this.txtKeyValue.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtKeyValue.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtKeyValue.CausesValidation = false;
             this.txtKeyValue.Enabled = false;
-            this.txtKeyValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtKeyValue.Location = new System.Drawing.Point(232, 22);
+            this.txtKeyValue.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.txtKeyValue.Location = new System.Drawing.Point(232, 32);
             this.txtKeyValue.Multiline = true;
             this.txtKeyValue.Name = "txtKeyValue";
             this.txtKeyValue.ReadOnly = true;
-            this.txtKeyValue.Size = new System.Drawing.Size(180, 39);
+            this.txtKeyValue.Size = new System.Drawing.Size(180, 40);
             this.txtKeyValue.TabIndex = 17;
             // 
             // txtKeyName
@@ -299,22 +284,11 @@
             this.lblKey.AutoSize = true;
             this.lblKey.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKey.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.lblKey.Location = new System.Drawing.Point(201, 34);
+            this.lblKey.Location = new System.Drawing.Point(200, 45);
             this.lblKey.Name = "lblKey";
             this.lblKey.Size = new System.Drawing.Size(32, 13);
             this.lblKey.TabIndex = 23;
             this.lblKey.Text = "Key:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label1.Location = new System.Drawing.Point(210, 68);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(23, 13);
-            this.label1.TabIndex = 24;
-            this.label1.Text = "IV:";
             // 
             // btnNewKey
             // 
@@ -342,7 +316,6 @@
             this.ClientSize = new System.Drawing.Size(420, 230);
             this.Controls.Add(this.btnNewKey);
             this.Controls.Add(this.txtKeyName);
-            this.Controls.Add(this.txtKeyIV);
             this.Controls.Add(this.btnExportKey);
             this.Controls.Add(this.btnImportKey);
             this.Controls.Add(this.btnReloadKey);
@@ -358,7 +331,6 @@
             this.Controls.Add(this.txtDecrypted);
             this.Controls.Add(this.btnClear);
             this.Controls.Add(this.lblKey);
-            this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
@@ -391,11 +363,9 @@
         private System.Windows.Forms.Button btnReloadKey;
         private System.Windows.Forms.Button btnImportKey;
         private System.Windows.Forms.Button btnExportKey;
-        private System.Windows.Forms.TextBox txtKeyIV;
         private System.Windows.Forms.TextBox txtKeyValue;
         private System.Windows.Forms.TextBox txtKeyName;
         private System.Windows.Forms.Label lblKey;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnNewKey;
     }
 }

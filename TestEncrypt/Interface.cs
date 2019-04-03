@@ -60,7 +60,6 @@ namespace CryptoMessage
         {
             txtKeyName.Text = keyName;
             txtKeyValue.Text = keyString;
-            txtKeyIV.Text = ivString;
             foreach (Control control in Controls)
             {
                 if (!control.Enabled)
