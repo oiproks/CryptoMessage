@@ -58,7 +58,7 @@
             this.txtDecrypted.Size = new System.Drawing.Size(180, 120);
             this.txtDecrypted.TabIndex = 0;
             this.txtDecrypted.Tag = "decrypted";
-            this.txtDecrypted.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtEncrypted_KeyDown);
+            this.txtDecrypted.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EncryptDecrypt_KeyDown);
             // 
             // lblDecrypted
             // 
@@ -90,9 +90,9 @@
             this.txtEncrypted.Name = "txtEncrypted";
             this.txtEncrypted.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtEncrypted.Size = new System.Drawing.Size(180, 120);
-            this.txtEncrypted.TabIndex = 3;
+            this.txtEncrypted.TabIndex = 1;
             this.txtEncrypted.Tag = "encrypted";
-            this.txtEncrypted.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtEncrypted_KeyDown);
+            this.txtEncrypted.KeyDown += new System.Windows.Forms.KeyEventHandler(this.EncryptDecrypt_KeyDown);
             // 
             // btnEncrypt
             // 
@@ -108,6 +108,7 @@
             this.btnEncrypt.Name = "btnEncrypt";
             this.btnEncrypt.Size = new System.Drawing.Size(30, 36);
             this.btnEncrypt.TabIndex = 4;
+            this.btnEncrypt.TabStop = false;
             this.btnEncrypt.Tag = "encrypt";
             this.btnEncrypt.UseVisualStyleBackColor = false;
             this.btnEncrypt.Click += new System.EventHandler(this.btnEncrypt_Click);
@@ -128,6 +129,7 @@
             this.btnDecrypt.Name = "btnDecrypt";
             this.btnDecrypt.Size = new System.Drawing.Size(30, 36);
             this.btnDecrypt.TabIndex = 5;
+            this.btnDecrypt.TabStop = false;
             this.btnDecrypt.Tag = "decrypt";
             this.btnDecrypt.UseVisualStyleBackColor = false;
             this.btnDecrypt.Click += new System.EventHandler(this.btnDecrypt_Click);
@@ -147,6 +149,7 @@
             this.btnClear.Name = "btnClear";
             this.btnClear.Size = new System.Drawing.Size(36, 36);
             this.btnClear.TabIndex = 0;
+            this.btnClear.TabStop = false;
             this.btnClear.Tag = "delete";
             this.btnClear.UseVisualStyleBackColor = false;
             this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
@@ -163,6 +166,7 @@
             this.btnMin.Name = "btnMin";
             this.btnMin.Size = new System.Drawing.Size(25, 10);
             this.btnMin.TabIndex = 9;
+            this.btnMin.TabStop = false;
             this.btnMin.Tag = "minimize";
             this.btnMin.UseVisualStyleBackColor = false;
             this.btnMin.Click += new System.EventHandler(this.btnMin_Click);
@@ -179,6 +183,7 @@
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(25, 10);
             this.button1.TabIndex = 10;
+            this.button1.TabStop = false;
             this.button1.Tag = "close";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.btnClose_Click);
@@ -195,6 +200,7 @@
             this.btnOnTop.Name = "btnOnTop";
             this.btnOnTop.Size = new System.Drawing.Size(25, 10);
             this.btnOnTop.TabIndex = 11;
+            this.btnOnTop.TabStop = false;
             this.btnOnTop.Tag = "ontop";
             this.btnOnTop.UseVisualStyleBackColor = false;
             this.btnOnTop.Click += new System.EventHandler(this.btnOnTop_click);
@@ -213,6 +219,7 @@
             this.btnReloadKey.Name = "btnReloadKey";
             this.btnReloadKey.Size = new System.Drawing.Size(40, 40);
             this.btnReloadKey.TabIndex = 18;
+            this.btnReloadKey.TabStop = false;
             this.btnReloadKey.Tag = "reload";
             this.btnReloadKey.UseVisualStyleBackColor = false;
             this.btnReloadKey.Click += new System.EventHandler(this.btnReloadKey_click);
@@ -231,6 +238,7 @@
             this.btnImportKey.Name = "btnImportKey";
             this.btnImportKey.Size = new System.Drawing.Size(40, 40);
             this.btnImportKey.TabIndex = 19;
+            this.btnImportKey.TabStop = false;
             this.btnImportKey.Tag = "import";
             this.btnImportKey.UseVisualStyleBackColor = false;
             this.btnImportKey.Click += new System.EventHandler(this.btnImportKey_Click);
@@ -249,6 +257,7 @@
             this.btnExportKey.Name = "btnExportKey";
             this.btnExportKey.Size = new System.Drawing.Size(40, 40);
             this.btnExportKey.TabIndex = 20;
+            this.btnExportKey.TabStop = false;
             this.btnExportKey.Tag = "export";
             this.btnExportKey.UseVisualStyleBackColor = false;
             this.btnExportKey.Click += new System.EventHandler(this.btnExportKey_Click);
@@ -266,6 +275,7 @@
             this.txtKeyValue.ReadOnly = true;
             this.txtKeyValue.Size = new System.Drawing.Size(180, 40);
             this.txtKeyValue.TabIndex = 17;
+            this.txtKeyValue.TabStop = false;
             // 
             // txtKeyName
             // 
@@ -281,6 +291,7 @@
             this.txtKeyName.ReadOnly = true;
             this.txtKeyName.Size = new System.Drawing.Size(178, 20);
             this.txtKeyName.TabIndex = 22;
+            this.txtKeyName.TabStop = false;
             this.txtKeyName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // lblKey
@@ -307,6 +318,7 @@
             this.btnNewKey.Name = "btnNewKey";
             this.btnNewKey.Size = new System.Drawing.Size(40, 40);
             this.btnNewKey.TabIndex = 25;
+            this.btnNewKey.TabStop = false;
             this.btnNewKey.Tag = "new";
             this.btnNewKey.UseVisualStyleBackColor = false;
             this.btnNewKey.Click += new System.EventHandler(this.btnNewKey_click);
@@ -344,6 +356,7 @@
             this.Text = "CryptoMessage";
             this.Load += new System.EventHandler(this.Interface_Load);
             this.Shown += new System.EventHandler(this.Interface_Shown);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Interface_KeyDown);
             this.MouseDown += new System.Windows.Forms.MouseEventHandler(this.Interface_MouseDown);
             this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.Interface_MouseMove);
             this.MouseUp += new System.Windows.Forms.MouseEventHandler(this.Interface_MouseUp);

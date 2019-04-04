@@ -56,15 +56,45 @@ namespace CryptoMessage
             mouseDown = false;
         }
 
-        private void txtEncrypted_KeyDown(object sender, KeyEventArgs e)
+        private void EncryptDecrypt_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Modifiers == Keys.Control && e.KeyCode == Keys.Return)
+            if (e.Modifiers == Keys.Control)
             {
-                TextBox textBox = (TextBox)sender;
-                if (textBox.Tag.Equals("decrypted"))
-                    btnEncrypt_Click(sender, e);
+                if (e.KeyCode == Keys.Return)
+                {
+                    TextBox textBox = (TextBox)sender;
+                    if (textBox.Tag.Equals("decrypted"))
+                        btnEncrypt_Click(sender, e);
+                    else
+                        btnDecrypt_Click(sender, e);
+                }
                 else
-                    btnDecrypt_Click(sender, e);
+                    Interface_KeyDown(sender, e);
+            }
+        }
+
+        private void Interface_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Modifiers == Keys.Control)
+            {
+                switch (e.KeyCode)
+                {
+                    case Keys.N:
+                        btnNewKey_click(sender, e);
+                        break;
+                    case Keys.R:
+                        btnReloadKey_click(sender, e);
+                        break;
+                    case Keys.E:
+                        btnExportKey_Click(sender, e);
+                        break;
+                    case Keys.I:
+                        btnImportKey_Click(sender, e);
+                        break;
+                    case Keys.D:
+                        btnClear_Click(sender, e);
+                        break;
+                }
             }
         }
 
@@ -239,22 +269,22 @@ namespace CryptoMessage
             switch (button.Tag)
             {
                 case "reload":
-                    text = "Reload local key";
+                    text = "Reload local key (Ctrl + R)";
                     y = - 20;
                     time = 1000;
                     break;
                 case "new":
-                    text = "Generate new key";
+                    text = "Generate new key (Ctrl + N)";
                     y = - 20;
                     time = 1000;
                     break;
                 case "import":
-                    text = "Import key from file";
+                    text = "Import key from file (Ctrl + I)";
                     y = - 20;
                     time = 1000;
                     break;
                 case "export":
-                    text = "Export key to file";
+                    text = "Export key to file (Ctrl + E)";
                     y = - 20;
                     time = 1000;
                     break;
@@ -266,23 +296,23 @@ namespace CryptoMessage
                     y = - button.Height - 10;
                     break;
                 case "minimize":
-                    text = "Decrypt text";
+                    text = "Minimize window on taskbar";
                     y = - button.Height - 10;
                     break;
                 case "close":
-                    text = "Decrypt text";
+                    text = "Close Crypto";
                     y = - button.Height - 10;
                     break;
                 case "delete":
-                    text = "Clear text";
+                    text = "Clear text (Ctrl + D)";
                     x = button.Width;
                     break;
                 case "encrypt":
-                    text = "Encrypt text";
+                    text = "Encrypt text (Ctrl + Return)";
                     x = button.Width;
                     break;
                 case "decrypt":
-                    text = "Decrypt text";
+                    text = "Decrypt text (Ctrl + Return)";
                     x = button.Width;
                     break;
                 default:
