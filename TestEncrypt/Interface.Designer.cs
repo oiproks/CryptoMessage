@@ -57,6 +57,8 @@
             this.txtDecrypted.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtDecrypted.Size = new System.Drawing.Size(180, 120);
             this.txtDecrypted.TabIndex = 0;
+            this.txtDecrypted.Tag = "decrypted";
+            this.txtDecrypted.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtEncrypted_KeyDown);
             // 
             // lblDecrypted
             // 
@@ -89,6 +91,8 @@
             this.txtEncrypted.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.txtEncrypted.Size = new System.Drawing.Size(180, 120);
             this.txtEncrypted.TabIndex = 3;
+            this.txtEncrypted.Tag = "encrypted";
+            this.txtEncrypted.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtEncrypted_KeyDown);
             // 
             // btnEncrypt
             // 

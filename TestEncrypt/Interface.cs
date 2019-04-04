@@ -56,6 +56,18 @@ namespace CryptoMessage
             mouseDown = false;
         }
 
+        private void txtEncrypted_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Modifiers == Keys.Control && e.KeyCode == Keys.Return)
+            {
+                TextBox textBox = (TextBox)sender;
+                if (textBox.Tag.Equals("decrypted"))
+                    btnEncrypt_Click(sender, e);
+                else
+                    btnDecrypt_Click(sender, e);
+            }
+        }
+
         private void DisplayAES()
         {
             txtKeyName.Text = keyName;
