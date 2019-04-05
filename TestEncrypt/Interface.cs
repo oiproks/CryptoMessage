@@ -265,28 +265,24 @@ namespace CryptoMessage
             string text = string.Empty;
             int x = 0;
             int y = 0;
-            int time = 500;
+            int time = 1000;
             switch (button.Tag)
             {
                 case "reload":
                     text = "Reload local key (Ctrl + R)";
                     y = - 20;
-                    time = 1000;
                     break;
                 case "new":
                     text = "Generate new key (Ctrl + N)";
                     y = - 20;
-                    time = 1000;
                     break;
                 case "import":
                     text = "Import key from file (Ctrl + I)";
                     y = - 20;
-                    time = 1000;
                     break;
                 case "export":
                     text = "Export key to file (Ctrl + E)";
                     y = - 20;
-                    time = 1000;
                     break;
                 case "ontop":
                     if (!TopMost)
@@ -296,7 +292,7 @@ namespace CryptoMessage
                     y = - button.Height - 10;
                     break;
                 case "minimize":
-                    text = "Minimize window on taskbar";
+                    text = "Minimize on taskbar";
                     y = - button.Height - 10;
                     break;
                 case "close":
